@@ -1,0 +1,17 @@
+{
+  "name": "express-whats-nearby",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon appServer.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
