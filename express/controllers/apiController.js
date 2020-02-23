@@ -40,6 +40,8 @@ module.exports = function(app) {
             if(photoArr != null && typeof photoArr != undefined && photoArr.length > 0) {
               return {id: `${element.id}`, url: `${photoArr[0].prefix}100x100${photoArr[0].suffix}`};                            
             }
+            else 
+              return {id: `${element.id}`, url: ''};
           }
           else 
             return {id: `${element.id}`, url: ''};
