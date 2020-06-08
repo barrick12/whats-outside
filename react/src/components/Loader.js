@@ -10,13 +10,15 @@ display: flex;
 
 export default function Loader(props){    
 
+  console.log("Loader isMobile? ", props.isMobile);
+
   var loader = props.isLoading == true ? 
     (<span className="loading-container">
       <PulseLoader
-      css={emotionCss}
-      size={20}            
-      color={"#fbbc05"}
-      loading={props.isLoading} />
+        css={emotionCss}
+        size={props.isMobile ? 50 : 20}            
+        color={"#fbbc05"}
+        loading={props.isLoading} />
     </span>) : (<span></span>);
 
   return(loader);

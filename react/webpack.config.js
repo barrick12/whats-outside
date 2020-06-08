@@ -8,7 +8,7 @@ module.exports = {
 	output: {
 		filename: 'bundle.js',
 		path: path.join(__dirname, '/dist'),
-		// publicPath allows you to specify the base path for all the assets within your application.
+		// publicPath allows you to specify the base path for all the assets within your application.		
 		publicPath: '/'
 	},
 	module:{
@@ -31,11 +31,15 @@ module.exports = {
 	},
 	devServer: {
 		// historyAPIFallback will redirect 404s to /index.html.
-    historyApiFallback: true,
-  },
+		historyApiFallback: true,
+		proxy: {
+			'/api': 'http://localhost:5000'
+		}
+  	},
 	plugins:[
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin(
+			//{template: path.join(__dirname,'/src/index.html')}
 			{template: path.join(__dirname,'/src/index.html')}
 		),		
 	],

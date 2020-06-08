@@ -10,10 +10,14 @@ console.log(`Listening on port ${port}`);
 
 console.log('Environment: ', process.env.NODE_ENV);
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "build") {
   app.use(express.static("../react/dist"));
 }
 
 apiController(app);
+
+app.use(function (req, res, next) {
+  res.status(404).redirect('/index.html')
+})
 
 app.listen(port);

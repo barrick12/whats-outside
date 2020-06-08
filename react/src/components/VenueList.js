@@ -10,12 +10,12 @@ export default function VenueList(props){
   var venueList= props.state.isLoading == false && props.state.isFirstSearchDone ? (      
     <ul>              
       { 
-        props.state.allVenues.length == 0 ? (<span className='misc-text'><strong>No data.</strong></span>) :
+        props.state.allVenues.length == 0 ? (<span className={'misc-text ' +(props.isMobile ? 'misc-text-mobile' : '' ) }><strong>No data.</strong></span>) :
         props.state.allVenues.map((v, index)=>{
           if(index < startIndex || index > endIndex ) return;
           let image = props.state.allVenuesImages.filter(e=>e.id == v.id);            
           let imageUrl = '';
-          if(image!= null && typeof image != undefined && image.length == 1) imageUrl = image[0].url;            
+          if(image!= null && typeof image != undefined && image.length == 1 && !props.isMobile) imageUrl = image[0].url;            
           let address = '';
           if( v.location.formattedAddress.length >= 2 )
             address = v.location.formattedAddress[0] + ", " + v.location.formattedAddress[1];
@@ -26,13 +26,15 @@ export default function VenueList(props){
               venueName={v.name}
               venueAddress={address}
               linkToAddress={`http://maps.google.com/?q=${v.location.lat},${v.location.lng}`}
+              isMobile={props.isMobile}              
               />
           </li>)}
         )
       }
     </ul>
   )
-  : props.state.isLoading == false && props.state.isFirstSearchDone == false && (<span className='misc-text'><strong>Nothing to show yet.</strong></span>);
+  : props.state.isLoading == false && props.state.isFirstSearchDone == false && 
+    (<span className={ 'misc-text ' +(props.isMobile ? 'misc-text-mobile' : '' ) }><strong>Nothing to show yet.</strong></span>);
 
   return(venueList);
 

@@ -8,12 +8,21 @@ ul {
   width: 100px;
   border-radius: 25px;
   margin: 10px;
-  margin-right: 20px;
+  margin-right: 20px;  
  }
 
 .venue-panel{
   display: flex;
   flex-direction: row;
+  font-family: 'Roboto', sans-serif;
+  font-size: medium;  
+  border: 0;
+  box-shadow: 0;
+}
+
+.venue-panel-mobile{
+  display: flex;
+  flex-direction: column;
   font-family: 'Roboto', sans-serif;
   font-size: medium;  
   border: 0;
@@ -30,8 +39,13 @@ ul {
   margin-top: 10px;
 }
 
+.venue-text-sm-mobile {
+  font-size: 200%;
+  height: 100px; 
+}
+
 .venue-panel-btn, .venue-panel-btn:after{
-  margin-top: 20px;  
+  margin-top: 10px;  
   flex-basis: 66%;
   background: #4285f4;      
   color: white;
@@ -42,7 +56,7 @@ ul {
 }
 
 .venue-panel-btn:hover{
-  margin-top: 20px;  
+  margin-top: 10px;  
   flex-basis: 66%;
   background: #3166bb;      
   color: white;
@@ -50,7 +64,41 @@ ul {
   transition: 0.4s;
 }
 
+
+
+.venue-panel-btn-mobile, .venue-panel-btn-mobile:after{
+  margin-top: 30px;  
+  background: #4285f4;      
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  transition: 0.4s;
+  height: 90px;
+  font-size: 200%;
+}
+
+.venue-panel-btn-mobile:disabled{
+  margin-top: 30px;  
+  background: #3166bb;      
+  color: white;
+  border-radius: 5px;  
+  transition: 0.4s;
+  height: 90px;
+  font-size: 200%;
+}
+
+
 .venue-panel-search-btn, .venue-panel-search-btn:after{  
+  flex-basis: 95%; 
+  background: #34A853;      
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  transition: 0.4s;
+}
+
+.venue-panel-search-btn-sm:after {
+  margin-top: 30px;
   flex-basis: 95%; 
   background: #34A853;      
   color: white;
@@ -94,24 +142,43 @@ ul {
 
 .venue-panel-search-btn-sm, .venue-panel-search-btn-sm:after {  
   margin-top: 10px;
-  background: #34A853;      
+  background: #34A853;
   color: white;
   border-radius: 5px;
   border: 0;
   transition: 0.4s; 
-  flex: 1;
+  flex: 1;  
   height: 34px;
+  transition: 0.4s; 
 }
 
-.venue-panel-search-btn-sm:hover {
+.venue-panel-search-btn-sm:disabled {  
   margin-top: 10px;
   background: rgb(43, 122, 64);
   color: white;
   border-radius: 5px;
   border: 0;
   transition: 0.4s; 
-  flex: 1;
+  flex: 1;  
   height: 34px;
+}
+
+.venue-panel-search-btn-sm-mobile {
+  margin-top: 30px;
+  font-size: 250%;
+  height: 100px;
+}
+
+.venue-panel-search-btn-sm-mobile:disabled {  
+  background: rgb(43, 122, 64);
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  transition: 0.4s; 
+  flex: 1;
+  margin-top: 30px;
+  font-size: 250%;
+  height: 100px;
 }
 
 .header-container{
@@ -137,3 +204,28 @@ ul {
   color: rgb(184, 176, 176);
 }
 
+.misc-text-mobile {
+  font-size: 250%;
+}
+
+.mobile-scale-header {
+  margin-top: 100px;  
+  margin-bottom: 50px;
+  font-size: 700%;  
+  min-width: 725px;  
+}
+
+.mobile-scale-body {
+  font-size: 250%;
+  margin-bottom: 20px;
+}
+
+.mobile-scale-body ~ .form-control[type='text'] {
+  height: 100px;
+  font-size: 250%;
+}
+
+.paginate-mobile .pagination-lg > li > a, .paginate-mobile .pagination-lg > li > span  {  
+  font-size: 30px !important;
+  padding: 30px !important;  
+}
